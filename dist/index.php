@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
         header('location:dashboard.php');
     }else{
 ?>
-        <script> alert ("Invalid username and password. Please try again."); </script>
+        <script> alert ("Invalid accesskey and password. Please try again."); </script>
     <?php
     }
 }
