@@ -194,7 +194,7 @@
                <div>
                </div>
                <a
-                  href="status.html"
+                  href="javascript:void(0)"
                   class="
                   w-full
                   block
