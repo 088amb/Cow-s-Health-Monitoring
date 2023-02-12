@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEARBRAND - Login</title>
+    <title>MOO! - Login</title>
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/4594/4594681.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
