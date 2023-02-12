@@ -17,8 +17,6 @@
          $location = $row['location'];
       }
    }
-
-
 ?>
 
 
@@ -42,7 +40,7 @@
 
 </head>
 <body>
-
+   <h2>HELLO MOTHERFUCKERS</h2>
     <section class="bg-white p-10 font-Poppins">
         <div class="flex justify-between"> 
             <h1 class="font-bold text-7xl  text-dark mt-3 mb-2">HEALTH <span class="text-gray-700">STATUS</span></h1>
