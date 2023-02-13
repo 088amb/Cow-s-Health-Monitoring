@@ -44,7 +44,7 @@
 
     <section class="bg-white p-10 font-Poppins">
         <div class="flex justify-between"> 
-            <h1 class="font-bold text-7xl  text-dark mt-3 mb-2">HEALTH <span class="text-gray-700">STATUS</span></h1>
+            <h1 class="font-bold text-7xl  text-[#000] mt-3 mb-2">HEALTH <span class="text-gray-700">STATUS</span></h1>
             <a href = "logout.php"><button class="text-[#000000] text-semibold text-2xl mt-7 mr-3">LOGOUT</button></a>
          </div>
          <div class="flex justify-between">
@@ -264,7 +264,7 @@
                mb-10
                "
                >
-               <span class="text-4xl font-bold block">COW1002</span>
+               <span class="text-4xl font-bold block">MADY-COW1002</span>
                <p class=
                   "
                   text-base text-body-color
@@ -383,7 +383,7 @@
                mb-10
                "
                >
-               <span class="text-4xl font-bold block">COW1003</span>
+               <span class="text-4xl font-bold block">AUDRIE-COW1003</span>
                <p class=
                   "
                   text-base text-body-color
