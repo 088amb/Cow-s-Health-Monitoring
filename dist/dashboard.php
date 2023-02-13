@@ -7,6 +7,7 @@
 
    if(mysqli_num_rows($result) > 0){
       while($row = $result->fetch_array()){
+         $id = $row['id'];
          $cowname = $row['cowid'];
          $date = $row['date'];
          $status = $row['status'];
@@ -44,7 +45,7 @@
     <section class="bg-white p-10 font-Poppins">
         <div class="flex justify-between"> 
             <h1 class="font-bold text-7xl  text-dark mt-3 mb-2">HEALTH <span class="text-gray-700">STATUS</span></h1>
-            <a href = "logout.php"><button class="text-[#000000] text-semibold text-2xl mt-8 mr-3">LOGOUT</button></a>
+            <a href = "logout.php"><button class="text-[#000000] text-semibold text-2xl mt-7 mr-3">LOGOUT</button></a>
          </div>
          <div class="flex justify-between">
          <h2 class="text-2xl text-gray-500 mt-2 mb-2">Total No. of Cows: 69</h2>
@@ -67,9 +68,8 @@
             }
           } 
 
-          /* <button class="text-[#000000] text-semibold text-5xl mr-3">+</button> */
           </style>
-          <section class=" justify-center items-start">
+          <section class="justify-center items-start">
             <button onclick="document.getElementById('myModal').showModal()" id="btn" class="text-[#000000] text-5xl mr-3 text-semibold">+</button>
           </section>
           
@@ -173,7 +173,7 @@
                      </div>
                   </div>
                </div>
-               <a href="status.html"
+               <a href="status.php?id=<?php echo $id ?>"
                   class="
                   w-full
                   block
@@ -1231,7 +1231,7 @@
         <footer class="bg-[#000] mt-10">
             <div class="max-w-lg bg-[#000] px-4 pt-24 py-8 mx-auto text-left md:max-w-none md:text-center">
                  <h1 class="text-3xl font-extrabold leading-10 tracking-tight text-white text-center sm:leading-none md:text-6xl lg:text-7xl"><span class="inline md:block text-8xl font-Mochiy">MOO!</span></h1>
-                 <h2 class="font-Poppins text-white mt-3">Copyright. All rights reserved.</h2>
+                 <h2 class="font-Poppins text-white mt-7">Copyright. All rights reserved.</h2>
                  <h2 class="font-Poppins text-white">Powered by Team ni Paula Angelica Penaflorida</h2>
                  <div class="mx-auto rounded-lg font-black mt-5 text-zinc-400 md:mt-12 md:max-w-lg text-center lg:text-lg"></div>
             </div>
