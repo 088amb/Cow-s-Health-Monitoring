@@ -1,10 +1,25 @@
+<?php
+    require "connection.php";
+    $url = $_GET['id'];
+    if(isset($_GET['id'])){
+        $sql = "SELECT * FROM cowdata WHERE id = '$url'";
+        $result = $conn->query($sql);
+        $fields = $result->fetch_assoc();
+        $date = $fields['date'];
+    }
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEARBRAND - Status</title>
+    <title>MOO! - COW1001</title>
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/4594/4594681.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css"/>
@@ -18,11 +33,11 @@
 <body>
     <section class="bg-white pt-10 pl-20 pr-20 pb-5 ml-1 font-Poppins">
         <div class="flex justify-between"> 
-            <h1 class="font-bold text-5xl text-dark mt-3 mb-2">COW1001 <span class="text-green-600">NORMAL</span></h1>
-            <a href="dashboard.php"><button class="text-[#000000] text-semibold text-2xl mr-7">Back</button></a>
+            <h1 class="font-bold text-5xl text-dark mt-3 mb-2"><?= $fields['cowid'] ?> <span class="text-green-600"><?= strtoupper($fields['status']) ?></span></h1>
+            <a href="dashboard.php"><button class="text-[#000000] text-semibold text-2xl mr-7 mt-5">Back</button></a>
          </div>
          <div class="flex justify-between">
-         <h2 class="text-2xl text-gray-500 mt-2 mb-2">Monday 24th, March 2023 - 11:11 AM</h2>
+         <h2 class="text-2xl text-gray-500 mt-2 mb-2"><?= $date?></h2>
          </div>
     </section>
     
@@ -36,8 +51,8 @@
             <div class="col-span-12 border-2 border-[#000] bg-white sm:col-span-5 justify-center">
                 <div class = "flex justify-between">
                     <div>
-                        <p class="text-8xl pt-20 pl-[90px] pr-10">37°</p>
-                        <p class="text-4xl text-medium font-normal pt-2 pb-20 pl-[90px]">Celcius</p>
+                        <p class="text-8xl pt-20 pl-20"><?= $fields['temperature']?>°</p>
+                        <p class="text-4xl font-normal pt-2 pb-20 pl-20">Celcius</p>
                     </div>
                     <div>
                         <p class="text-8xl pt-20 pl-16 pr-24">97.78</p>
@@ -49,9 +64,8 @@
         <div class="col-span-12 border-2 border-[#000] bg-white sm:col-span-5 justify-center">
             <div class = "flex justify-between">
                 <div>
-                    <p class="text-8xl pt-20 pl-[120px]">81</p>
-                    <p class="text-4xl text-medium font-normal pt-2 pl-[129px]">bpm</p>
-
+                    <p class="text-8xl pt-20 pl-[120px]"><?= $fields['heartrate'] ?></p>
+                    <p class="text-4xl font-normal pt-2 pl-[120px]">bpm</p>
                 </div>
                 <div>
                     <img src = "https://cdn-icons-png.flaticon.com/512/2711/2711193.png" class = "w-[350px] pt-[25px] pr-[100px]">
@@ -70,24 +84,24 @@
             <div class="col-span-12 border-2 border-[#000] bg-white sm:col-span-5 justify-center">
                 <div class = "flex justify-between">
                     <div>
-                        <p class="text-8xl pt-20 pl-32 pr-10">81</p>
-                        <p class="text-4xl text-medium font-normal pt-2 pb-20 pl-[135px]">bpm</p>
+                        <p class="text-8xl pt-20 pl-24"><?= $fields['respiration'] ?></p>
+                        <p class="text-4xl font-normal pt-2 pb-2 pl-24">bpm</p>
                     </div>
                     <div>
-                        <p class="text-8xl pt-20 pl-24 pr-32">70%</p>
-                        <p class="text-4xl text-medium font-normal pt-2 pl-28">Percent</p>
+                        <p class="text-8xl pt-20 pl-2 pr-24">70%</p>
+                        <p class="text-4xl font-normal pt-2 pl-28">Percent</p>
                     </div>
                  </div>
             </div>
 
-        <div class="col-span-12 border-2 border-[#000] bg-white sm:col-span-5">
-            <div class="flex justify-between">
+        <div class="col-span-12 border-2 border-[#000] bg-white sm:col-span-5 justify-center">
+            <div class="flex justify">
                 <div>
-                    <p class="text-8xl pt-20 pl-20">11450</p>
-                    <p class="text-4xl font-normal pt-2 pl-24">Step Counts</p>
+                    <p class="text-8xl pt-20 pl-20 pb-2 pr-20"><?= $fields['stepscount'] ?></p>
+                    <p class="text-4xl font-normal pt-2 pl-20 pb-20 pr-20">Step Counts</p>
                 </div> 
                 <div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2395/2395796.png" class="w-[200px] pt-10 mr-16">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2395/2395796.png" class="w-[100px] pt-10 pr-20">
                 </div>
             </div>
 
@@ -104,7 +118,7 @@
     <footer class="bg-[#000] mt-10">
         <div class="max-w-lg bg-[#000] px-4 pt-24 py-8 mx-auto text-left md:max-w-none md:text-center">
              <h1 class="text-3xl font-extrabold leading-10 tracking-tight text-white text-center sm:leading-none md:text-6xl lg:text-7xl"><span class="inline md:block text-8xl font-Mochiy">MOO!</span></h1>
-             <h2 class="font-Poppins text-white mt-3">Copyright. All rights reserved.</h2>
+             <h2 class="font-Poppins text-white mt-7">Copyright. All rights reserved.</h2>
              <h2 class="font-Poppins text-white">Powered by Team ni Paula Angelica Penaflorida</h2>
              <div class="mx-auto rounded-lg font-black mt-5 text-zinc-400 md:mt-12 md:max-w-lg text-center lg:text-lg"></div>
         </div>
