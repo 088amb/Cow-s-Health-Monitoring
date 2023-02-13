@@ -10,9 +10,6 @@
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +30,7 @@
 <body>
     <section class="bg-white pt-10 pl-20 pr-20 pb-5 ml-1 font-Poppins">
         <div class="flex justify-between"> 
-            <h1 class="font-bold text-5xl text-dark mt-3 mb-2"><?= $fields['cowid'] ?> <span class="text-green-600"><?= strtoupper($fields['status']) ?></span></h1>
+            <h1 class="font-bold text-5xl text-[#000] mt-3 mb-2"><?= $fields['cowid'] ?> <span class="text-green-600"><?= strtoupper($fields['status']) ?></span></h1>
             <a href="dashboard.php"><button class="text-[#000000] text-semibold text-2xl mr-7 mt-5">Back</button></a>
          </div>
          <div class="flex justify-between">
