@@ -93,7 +93,7 @@
                              <label for="password" class="absolute left-[11.5em] -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-[#000000] peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Site Password</label>
                          </div>
                          <div class="relative flex justify-center">
-                             <a href="status.html"><button class="w-[20em] bg-[#000000] text-white rounded-md px-2 py-1 mt-7">Add</button></a>
+                             <a href="dashboard.php"><button class="w-[20em] bg-[#000000] text-white rounded-md px-2 py-1 mt-7">Add</button></a>
                          </div>
                      </div>
           </dialog>
